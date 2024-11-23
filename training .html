@@ -1,0 +1,103 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>simple calculator</title>
+  
+
+<style>
+  height:100px;
+            background-color: #f4f4f4;
+        }
+        #calculator {
+            background:gold;
+            padding: 20px;
+            border-radius: 5px;
+            
+        }
+        input {
+            width: 90%;
+            margin-bottom: 10px;
+            padding: 10px;
+            font-size: 18px;
+          backgroundcolor:blue;
+        }
+        button {
+            width: 25%;
+            padding: 10px;
+            font-size: 18px;
+            margin: 1%;
+          color:red;
+            
+        }   
+  
+  </style>
+</head>
+<body>
+  <div id="calculate">
+    
+    <input type="text" id="result" disabled />
+    <div>
+    <button onclick="clearResult()">c</button>
+    <button onclick="appendtoResult('+')">+</button>
+    <button onclick="appendtoResult('-')">-</button>
+    <button onclick="appendtoResult('*')">*</button>
+     <button onclick="appendtoResult('/')">/</button>
+    
+  </div>
+    <div>
+      <button onclick="appendtoResult('1')">1</button>
+      <button onclick="appendtoResult('2')">2</button>
+      <button onclick="appendtoResult('3')">3</button>
+      <button onclick="appendtoResult('4')">4</button>
+    </div>
+    <div>
+      <button onclick="appendtoResult('5')">5</button>
+      <button onclick="appendtoResult('6')">6</button>
+      <button onclick="appendtoResult('7')">7</button>
+      <button onclick="appendtoResult('8')">8</button>
+    </div>
+    <div>
+           <button onclick="appendtoResult('9')">9</button>
+            
+            
+            <button onclick="calculateResult('=')">=</button>
+      <button onclick="appendtoResult('0')">0</button>
+    </div>
+  </div>
+
+
+    <script>
+        function appendtoResult(value) {
+            document.getElementById('result').value += value;
+        }
+
+        function clearResult() {
+            document.getElementById('result').value = '';
+        }
+
+        function calculateResult() {
+            const resultField = document.getElementById('result');
+            try {
+                resultField.value = eval(resultField.value);
+            } catch (error) {
+                resultField.value = 'Error';
+                
+            }
+        }
+    </script>
+</body>
+</html> 
+    
+    
+    
+
+
+
+
+
+
+
+
+
+</html>
